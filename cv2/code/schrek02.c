@@ -88,6 +88,9 @@ ParserState a(ParserState s_) {
       return STATE_HEAD_OK;
       break;
     case STATE_HEAD_OK:
+      return STATE_END_A;
+      break;
+    case STATE_END_A:
       return STATE_OK;
       break;
   }
@@ -95,11 +98,26 @@ ParserState a(ParserState s_) {
 }
 
 ParserState b(ParserState s_) {
-  /* FILL THIS FUNCTION SKELETON */
+  switch (s_) {
+    case STATE_INIT:
+      return STATE_INIT_B;
+      break;
+    case STATE_INIT_B:
+      return STATE_UNKNOWN;
+      break;
+    case STATE_HEAD_OK:
+      return STATE_END_B;
+      break;
+    case STATE_END_B:
+      return STATE_OK;
+      break;
+  }
   return STATE_UNKNOWN;
 }
 
 ParserState other(ParserState s_) {
-  /* FILL THIS FUNCTION SKELETON */
-  return STATE_UNKNOWN;
+  if (s_ == STATE_HEAD_OK)
+    return STATE_HEAD_OK;
+  else
+    return STATE_UNKNOWN;
 }
