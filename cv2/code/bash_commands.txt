@@ -6,3 +6,12 @@ more test1_1.txt | grep '[A-z][0-9]'
 
 3)
 more test1_1.txt | grep '^[a-z]\{7,8\}$'
+
+4)
+more test1_1.txt | egrep '^([A-z]*|*)$'
+
+5)
+more test1_1.txt | egrep '^((ab|ba)[c-z]*(ab|ba)$'
+
+6)
+more test1_1.txt | grep '^[1-9][0-9]*$'
