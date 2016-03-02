@@ -1,0 +1,8 @@
+1)
+more test1_1.txt | grep '^[A-z][0-9]$'
+
+2)
+more test1_1.txt | grep '[A-z][0-9]'
+
+3)
+more test1_1.txt | grep '^[a-z]\{7,8\}$'
