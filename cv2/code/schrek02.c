@@ -84,13 +84,13 @@ ParserState a(ParserState s_) {
     case STATE_INIT:
       return STATE_INIT_A;
       break;
-    case STATE_INIT_A:
+    case STATE_INIT_B:
       return STATE_HEAD_OK;
       break;
     case STATE_HEAD_OK:
       return STATE_END_A;
       break;
-    case STATE_END_A:
+    case STATE_END_B:
       return STATE_OK;
       break;
   }
@@ -102,13 +102,13 @@ ParserState b(ParserState s_) {
     case STATE_INIT:
       return STATE_INIT_B;
       break;
-    case STATE_INIT_B:
-      return STATE_UNKNOWN;
+    case STATE_INIT_A:
+      return STATE_HEAD_OK;
       break;
     case STATE_HEAD_OK:
       return STATE_END_B;
       break;
-    case STATE_END_B:
+    case STATE_END_A:
       return STATE_OK;
       break;
   }
